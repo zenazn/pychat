@@ -26,7 +26,7 @@ class ChatHandler(SocketServer.BaseRequestHandler):
             for client in clients:
                 if client != self:
                     try:
-                        client.request.send(data)
+                        client.request.send(data + "\n")
                     except:
                         clients.remove(client)
     def finish(self):
